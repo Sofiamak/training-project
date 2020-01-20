@@ -3,7 +3,10 @@ all: restart
 create: main.cpp
 	g++ -c main.cpp -o bin/main.o
 	g++ -c app/userregister.cpp -o bin/userregister.o
-	g++ -o main bin/userregister.o bin/main.o  -I.. -lpthread  `mysql_config --libs`
+	g++ -c app/userpayment.cpp -o bin/userpayment.o
+	g++ -c app/userinformation.cpp -o bin/userinformation.o
+	g++ -c app/userauth.cpp -o bin/userauth.o
+	g++ -o main bin/userpayment.o bin/userregister.o bin/userinformation.o bin/userauth.o bin/main.o  -I.. -lpthread  `mysql_config --libs`
 
 clean:
 	rm -rf bin/*.o	
