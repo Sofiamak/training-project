@@ -7,25 +7,25 @@ using namespace std;
 class UserAuth{
 
     private:
-        string UserName;
-        string Pasword;
+        string username;
+        string password;
 
     public:
 
-        void setPasword(string Pasword){
-            this->Pasword=Pasword;
+        void setPasword(string password){
+            this->password=password;
         }
         
         string getPasword(){
-            return this->Pasword;
+            return this->password;
         }
 
 
         void setUserName(string UserName){
-            this->UserName=UserName;
+            this->username=username;
         }
         
         string getUserName(){
-            return this->UserName;
+            return this->username;
         }
 };

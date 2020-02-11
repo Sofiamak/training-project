@@ -53,20 +53,69 @@ class MySql: public InterfaceSQL{
             return true;
             }
 
-            void test(){
-                if(mysql_query(con, "SELECT * FROM content ")){
-                    fprintf(stderr, "%s\n", mysql_error(con));
+            void selectAllUsers(){
+               
+               int rows;
+               MYSQL_ROW row;
+               
+                if (mysql_query(con, "SELECT * FROM Users") == 0)
+                {
                     res = mysql_store_result(con);
-                    cout << "Password is: \n";
-                    cout << res << endl;
-                    mysql_close(con);
-                   // exit(1);
+                    if (res != NULL)
+                    {
+                        rows = mysql_num_rows(res);
+                        printf("Retrieved %d rows\n", rows);
+
+                        while((row = mysql_fetch_row(res))) {
+                            for (int i=0 ; i < mysql_num_fields(res); i++){
+                                printf("%s\n",row[i]);
+                            }    
+                        }
+
+                    }
+                     else {
+                        printf("Query failed\n");
+                    }
+                }
+                else{
+                    abort();
                 }
             }
+
+
+            //  void selectUserByUsername(string username){
+               
+            // //    int rows;
+            // //    MYSQL_ROW row;
+               
+            // //     if (mysql_query(con, "SELECT * FROM Users WHERE username='"+username+"'") == 0)
+            // //     {
+            // //         res = mysql_store_result(con);
+            // //         if (res != NULL)
+            // //         {
+            // //             rows = mysql_num_rows(res);
+            // //             printf("Retrieved %d rows\n", rows);
+
+            // //             while((row = mysql_fetch_row(res))) {
+            // //                 for (int i=0 ; i < mysql_num_fields(res); i++){
+            // //                     printf("%s\n",row[i]);
+            // //                 }    
+            // //             }
+
+            // //         }
+            // //          else {
+            // //             printf("Query failed\n");
+            // //         }
+            // //     }
+            // //     else{
+            // //         abort();
+            // //     }
+            // }
 
             void close(){
                     mysql_close(con);
                 }
             };
+
 }
 #endif

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class UserPayment: protected UserAuth{
+class UserPayment: public UserAuth{
 
     private:
         double Amount;

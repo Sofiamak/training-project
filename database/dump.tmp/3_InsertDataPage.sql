@@ -1,4 +1,0 @@
--- INSERT INTO `users` (`name`, `url`,`content_id`) VALUES ('Contact', '/contact',1);
--- INSERT INTO `users` (`name`, `url`,`content_id`) VALUES ('Blog', '/blog',NULL);
--- INSERT INTO `users` (`name`, `url`,`content_id`) VALUES ('AboutUs', '/about',2);
--- INSERT INTO `users` (`name`, `url`,`content_id`) VALUES ('Product', '/product',NULL);

@@ -11,11 +11,3 @@ CREATE TABLE  Users (
    `date_update`  TIMESTAMP NULL,
     PRIMARY KEY (UserID)
 );
-
-CREATE TABLE Persons (
-    Personid int NOT NULL AUTO_INCREMENT,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    PRIMARY KEY (Personid)
-);

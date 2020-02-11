@@ -58,10 +58,13 @@ class  UserRegister: protected UserAuth
             return this->Country;
         }
 
-        void setPaswordCopy(string Pasword){
+        void setPaswordCopy(string Pasword){ //wrapper
             this->setPasword(Pasword);
         }
 
+        void setUserNameCopy(string UserName){ //wrapper
+            this->setUserName(UserName);
+        }
 
 
         void Info(){
