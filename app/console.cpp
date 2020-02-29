@@ -21,10 +21,15 @@ private:
 public:
    
     const char * UAUTH = "1-Login User";
-    const char * UREGISTRATION = "2-Registration of User";
+    const char * UINFORMATION= "2-User Information";
     const char * UPAYMENT = "3-User Payment";
-    const char * UINFORMATION= "4-User Information";
-    const char * CHANGE_OPTIONS= "you can change options:";
+    const char * UREGISTRATION = "4-Registration of User";
+    
+    const char * RETURN_MENU = "Do you want to return to menu?(yes or no)";
+    const char *TRUE_STR="yes";
+    const char *FALSE_STR="no";
+    const char *RETURN_AUTH="Do you want to authorize?(yes or no)";
+    const char *TEXT_ERROR="Incorrect input, enter again.";
 
 
 private:
@@ -47,13 +52,6 @@ private:
         userregister 
     };
 
-    void optionsCout(){
-        cout<<UREGISTRATION<<";";
-        cout<<UAUTH<<";";
-        cout<<UPAYMENT<<";";
-        cout<< UINFORMATION<<endl;
-    }
-    
     void switchAction(int operation){
         switch(operation)
         {
@@ -66,6 +64,7 @@ private:
 
    void  userauthAction(){
        
+       cout<<"USER AUTH:"<<endl;
        cout<<"Insert Username:"<<endl;
        cin>>this->username;
        cout<<"Insert Password:"<<endl;
@@ -76,12 +75,39 @@ private:
       
        cout<<"SUCCESS:"<<endl;
        ua.Info();
-     
-      // system("clear");
     }
 
     void userinfoAction(){
-        ui.Info();
+       string auth;
+       cout<<"USER INFORMATION:"<<endl;
+       cout<<RETURN_AUTH<<endl;
+       cin>>auth;
+
+       if (auth!=TRUE_STR || auth!=FALSE_STR){
+           
+            while(true)
+            {   
+                cout<<TEXT_ERROR<<endl;
+                cin>>auth;
+                if(auth!=TRUE_STR||auth!=FALSE_STR){
+                   continue;
+                }
+                break;
+            }
+       }
+       
+        if (auth==TRUE_STR){
+            system("clear");
+            userauthAction();
+            return;
+        } 
+        
+        if(auth==FALSE_STR){
+            cout<<"SUCCESS:"<<endl;
+            ui.Info();
+            return;
+        }
+
         return;
     }
 
@@ -104,6 +130,8 @@ private:
        ur.setAge(300);
        ur.setUserName(this->username);
        ur.setPasword(this->password);
+       cout<<"SUCCESS:"<<endl;
+      
        ur.Info();
         return;
     }
@@ -111,15 +139,31 @@ private:
     void userpaymentAction(){
        up.setCurrency("USD");
        up.setAmount(10.65);
+       cout<<"SUCCESS:"<<endl;
        up.Info();
        return;
     }
 
 public:
     void  consoleRun(){
+      string str;
       cin>>this->operation;
+      cout<<RETURN_MENU<<endl;
+      cin>>str;
+      if(str==TRUE_STR){
+        system("clear");
+        optionsCout();
+        return;
+      }
       this->switchAction(operation);
     }
 
-
+     void optionsCout(){
+        cout<<UAUTH<<endl;
+        cout<< UINFORMATION<<endl;
+        cout<<UPAYMENT<<endl;
+        cout<<UREGISTRATION<<endl;
+        cout<<"select:"<<endl;
+    }
+    
 };

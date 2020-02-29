@@ -14,9 +14,7 @@ using namespace std;
 // void selectUserByUsername1(string username);
 
 int main(void) {
-    App app;
-
-  
+     App::RunConsole();
 }
 
 

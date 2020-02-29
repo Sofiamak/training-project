@@ -1,24 +1,22 @@
-#include <bits/stdc++.h> 
+    #include <bits/stdc++.h> 
 #include <iostream>
 #include <string>
 #include <string>
 #include "console.cpp"
 
+class App{
 
-void Run(){
+public:
+    void static RunConsole(){
 
-     app.appRun();
-    cout<<"Login or SingUp:"<<endl;
-    cout<<UAUTH<<endl;
-    cout<<app.UREGISTRATION<<endl;
-    cout<<app.UPAYMENT<<endl;
-    cout<<app.UINFORMATION<<endl;
-    cout<<"select:"<<endl;
-
-    while(1)
-    {
+        Console c; 
+        cout<<"Login or SingUp:"<<endl;
+        c.optionsCout();
        
-        continue;
+        while(true)
+        {
+            c.consoleRun();
+            continue;
+        }
     }
-    return 0;
-}
+};
