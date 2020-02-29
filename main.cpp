@@ -5,6 +5,7 @@
 #include "app/app.cpp"
 #include <string>
 
+
 using namespace driver;
 using namespace mysql;
 using namespace std;
@@ -13,58 +14,9 @@ using namespace std;
 // void selectUserByUsername1(string username);
 
 int main(void) {
+    App app;
 
-//      string userName;
-//      string password;
-//      int operation;
-
-//      cout<<"Welcome to hell!"<<endl;
-//      cout<<"Selection operation!"<<endl;
-//      cout<<"1- registration of user"<<endl;
-//      cout<<"2- info about user"<<endl;
-//      cout<<"3- info about billing"<<endl;
-//      cout<<"SELECT:"<<endl;
-//      cin>>operation;
-
-//      switch (operation) {
-//           case 1:
-//           cout << "Registration of User";
-//        break;
-//           case 2:
-//           cout<<"Input your name:"<<endl;
-//           cin>>userName;
-//           cout<<"Input your password:"<<endl;
-//           cin>>password;
-//           cout << "Info User";
-//           //findAllUsers();
-//           selectUserByUsername(userName);
-//        break;
-//           case 3:
-//           cout<<"Input your name:"<<endl;
-//           cin>>userName;
-//           cout<<"Input your password:"<<endl;
-//           cin>>password;
-//           selectUserByUsername(userName);
-//           cout << "Billing";
-//        break;
-//           default:
-//           cout << "Error. Make a choice";
-//      }
-
-
-    
-//       //*********************Check auth*************************************//
-//       //**********************************************************//
- 
-     
-     
-    
-//     cout<<"-----------------test:"<<endl;
-    
-    App ap;
-    ap.loginOrSignupUser();
-
-
+  
 }
 
 

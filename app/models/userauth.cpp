@@ -4,7 +4,8 @@
 
 using namespace std;
 
-class UserAuth{
+class UserAuth
+{
 
     private:
         string username;
@@ -20,12 +21,16 @@ class UserAuth{
             return this->password;
         }
 
-
-        void setUserName(string UserName){
+        void setUserName(string username){
             this->username=username;
         }
         
         string getUserName(){
             return this->username;
+        }
+
+        void Info(){
+            cout<<this->getUserName()<<endl;
+            cout<<this->getPasword()<<endl;
         }
 };

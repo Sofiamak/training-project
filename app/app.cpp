@@ -1,50 +1,24 @@
 #include <bits/stdc++.h> 
 #include <iostream>
 #include <string>
-#include "userinformation.cpp"
+#include <string>
+#include "console.cpp"
 
-using namespace std;
 
-class  App
-{
+void Run(){
 
-private:
-    UserInformation ui;
-    int operation ;
-    string userName;
-    string password;
+     app.appRun();
+    cout<<"Login or SingUp:"<<endl;
+    cout<<UAUTH<<endl;
+    cout<<app.UREGISTRATION<<endl;
+    cout<<app.UPAYMENT<<endl;
+    cout<<app.UINFORMATION<<endl;
+    cout<<"select:"<<endl;
 
-public:
-    
-    void   loginOrSignupUser(){
-
-           cout<<"Login or SingUp:"<<endl;
-           cout<<"1- registration of user"<<endl;
-           cout<<"2- login user"<<endl;
-           cout<<"SELECT:"<<endl;
-           cin>>this->operation;
-
+    while(1)
+    {
        
-            switch (this->operation) {
-                case 1:
-                cout << "Registration of User";
-            break;
-                case 2:
-                cout << "Login User"<<endl;
-                cout<<"Input your name:"<<endl;
-                cin>>this->userName;
-                cout<<"Input your password:"<<endl;
-                cin>>this->password;
-                this->ui.setUserName(this->userName);
-                this->ui.setPasword(this->password);
-                cout<<this->ui.getUserName()<<endl;
-                cout<<this->ui.getPasword()<<endl;
-            break;
-                default:
-                cout << "Error. Make a choice";
-            }
-
+        continue;
     }
-  
-
-};
+    return 0;
+}
